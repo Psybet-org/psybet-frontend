@@ -1,29 +1,17 @@
-import axios from 'axios';
+import axios from 'axios'
 
-const authAxios = axios.create();
-authAxios.interceptors.request.use((config : any) => {
-  const token = localStorage.getItem('token');
-  // @ts-ignore
-  // eslint-disable-next-line no-param-reassign
-  if(token){
-    config.headers.Authorization = `bearer ${token}`;
-  }
-  return config;
-});
-
-authAxios.interceptors.response.use(
-  (res : any) => res,
-  (err : any) => {
-    if (err.response.status === 401) {
-      // place your reentry code
-      localStorage.removeItem('token');
-      if (typeof window) {
-        window.location.reload();
-      }
-    } else {
-      throw new Error(err.response.data.message);
+// Add a request interceptor
+axios.interceptors.request.use(
+  config => {
+    const token = window.localStorage.getItem('token');
+    if (token) {
+            config.headers['Authorization'] = 'Bearer ' + token
     }
+    return config
   },
-);
+  error => {
+    Promise.reject(error)
+  }
+)
 
-export default authAxios;
+export default axios;

@@ -1,7 +1,7 @@
 import type { AbiItem } from 'web3-utils';
 import type { Contract } from 'web3-eth-contract';
 import ethereumClient from '../ethereumClient';
-import contractJSON from '@zencats/contracts/build/contracts/ZenCats.json';
+import contractJSON from '../abi/psybet.json';
 // import { ZENCATS_CONTRACT_ADDRESS } from '@/config';
 
 const { abi } = contractJSON;
@@ -23,7 +23,7 @@ function initialized() {
 async function init() {
   isInitialing = true;
   const client = await ethereumClient.get();
-  const myContract = new client.eth.Contract(abi as unknown as AbiItem,"0xD7b287f8Ef807fce5949EC64c316985b97171cD7");
+  const myContract = new client.eth.Contract(abi as unknown as AbiItem,"0x1438CC75Bb1e68F6b9054438e9E27762c637CE26");
   // const myContract = new client.eth.Contract();
   contract = myContract;
   isInitialing = false;

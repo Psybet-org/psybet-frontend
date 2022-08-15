@@ -2,6 +2,7 @@ import tw from "twin.macro";
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
+
  .layout {
     ${tw`max-w-layout w-full`};
     &--center {

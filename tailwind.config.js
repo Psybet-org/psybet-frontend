@@ -9,8 +9,12 @@ module.exports = {
       colors: {
         gray: {
           100: "#F8F2F2",
-          900: "#242526",
+          800: "#242526",
+          900: "#393232"
         },
+        red: {
+          100: "#C93B3B"
+        }
       },
       fontFamily: {
         consolas: "Consolas",
