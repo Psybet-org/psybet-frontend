@@ -13,11 +13,17 @@ module.exports = {
           900: "#393232"
         },
         red: {
-          100: "#C93B3B"
+          100: "#FF5F6D",
+          200: "#C93B3B",
+          300: "#FA2F6C"
+        },
+        green:{
+          100: "#BCB578"
         }
       },
       fontFamily: {
-        consolas: "Consolas",
+        orbitron: "Orbitron",
+        poppins:'Poppins'
       },
       maxWidth: {
         layout: "1200px",

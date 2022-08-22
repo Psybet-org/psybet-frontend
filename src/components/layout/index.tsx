@@ -8,9 +8,9 @@ const Layout = ( {children} :AuxProps  ) => {
     // const isMobile = useIsMobile();
 
     return(
-        <div>
+        <div className="flex flex-col w-full ">
         <LayoutHeader/>
-            <div className="desktop:py-32 text-lg layout layout--center">
+            <div className="desktop:my-28">
                 {children}
             </div>
         </div>

@@ -6,12 +6,12 @@ import Button from '../../components/utilities/button';
 
 const LayoutHeader = () => {
     return (
-        <nav className="w-full bg-gray-900 desktop:py-8 fixed right-0 top-0 left-0">
+        <nav className="w-full bg-gray-900 desktop:py-8 fixed right-0 top-0 left-0 z-50 font-poppins">
             <div className="layout layout--center flex justify-between">
-                <div className="flex items-center gap-x-12 text-white">
+                <div className="flex items-center gap-x-12 text-white text-xl font-semibold">
                     <Link href={'https://www.psybet.io'}>
                         <a>
-                            PSYbet
+                            PSYBET
                         </a>
                     </Link>
                     { strings.HOME_MENUS.map(menu => 

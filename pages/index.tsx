@@ -6,6 +6,7 @@ import { etherValue,weiValue } from '../src/utils/ethSwaper';
 import { useEffect, useState } from "react";
 import { sendMoney } from "../src/services/ethereum/api/ethFinance";
 import axios from "../src/services/api/axios";
+import HomeHeader from '../src/components/pages/home/header';
 
 export default function Home() {
   const [ user , setUser] = useState(null);
@@ -49,6 +50,11 @@ export default function Home() {
   return (
     <Layout>
         <div className="flex flex-col gap-y-4">
+
+          <HomeHeader/>
+
+
+          
           <button className="border p-3" onClick={connect} disabled={isConnected}>
             connect
           </button>
