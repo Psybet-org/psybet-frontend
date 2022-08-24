@@ -8,6 +8,19 @@ const Style = styled.div`
     width: 100% !important;
 }
 
+svg{
+    transform: scale(0.5);
+}
+
+.svg:hover{
+        circle{
+            stroke:#393232 !important;
+
+        }
+        path{
+            fill:#393232 !important;
+        }
+    }
 
 `;
 
