@@ -9,6 +9,7 @@ import axios from "../src/services/api/axios";
 import HomeHeader from '../src/components/pages/home/header';
 import HomeRoadmap from "../src/components/pages/home/roadmap";
 import HomeGames from "../src/components/pages/home/games";
+import HomeParty from "../src/components/pages/home/party";
 
 export default function Home() {
   // const [ user , setUser] = useState(null);
@@ -56,6 +57,7 @@ export default function Home() {
           <HomeHeader/>
           <HomeRoadmap/>
           <HomeGames/>
+          <HomeParty/>
           
           {/* <button className="border p-3" onClick={connect} disabled={isConnected}>
             connect
