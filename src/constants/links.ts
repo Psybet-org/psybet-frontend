@@ -1,7 +1,7 @@
-export const DISCORD_URL = 'www.google.com';
-export const TWITTER_URL = 'www.google.com';
-export const EMAIL = 'www.google.com';
-export const INSTAGRAM_URL = 'www.google.com';
+export const DISCORD_URL = 'https://www.google.com';
+export const TWITTER_URL = 'https://www.google.com';
+export const EMAIL = 'https://www.google.com';
+export const INSTAGRAM_URL = 'https://www.google.com';
 
 export const HEADER_SOCIALS = [
         {

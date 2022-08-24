@@ -32,13 +32,13 @@ luck... `,
                 DONE:true
             },
             {
-                TITLE:'LAUNCH GAME',
+                TITLE:'UPDATE GAME',
                 PROPS:['Battlemode','Smartcontract','Partnetrship'],
                 DATE:'22/2/2023',
                 IMG:'/home/roadmap-2.png'
             },
             {
-                TITLE:'LAUNCH GAME',
+                TITLE:'FILAN GAME',
                 PROPS:['Battlemode','Smartcontract','Partnetrship'],
                 DATE:'22/2/2023',
                 IMG:'/home/roadmap-3.png',
