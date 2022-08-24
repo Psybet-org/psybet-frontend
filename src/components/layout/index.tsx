@@ -1,19 +1,23 @@
 import LayoutHeader from "./layoutHeader";
+import LayoutFooter from './layoutFooter';
+import Style from './style';
 
 export interface AuxProps  { 
     children: React.ReactNode
 }
 
 const Layout = ( {children} :AuxProps  ) => {
-    // const isMobile = useIsMobile();
 
     return(
-        <div>
-        <LayoutHeader/>
-            <div className="desktop:py-32 text-lg layout layout--center">
-                {children}
+        <Style>
+            <div className="flex flex-col w-full">
+            <LayoutHeader/>
+                <div>
+                    {children}
+                </div>
+            <LayoutFooter/>
             </div>
-        </div>
+        </Style>
     )
 }
 

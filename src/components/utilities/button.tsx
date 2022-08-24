@@ -2,19 +2,25 @@ import classnames from 'classnames';
 
 export default (props : any) => {
 
-    const { size = 'md' , theme = 'danger' } : {
+    const { size = 'md' , theme = 'default',type = 'default' } : {
         size : 'sm' | 'md' | 'lg' ,
-        theme : 'danger' | 'normal' | 'link'
+        theme : 'default' | 'link',
+        type: 'default' | 'classic'
     } = props; 
 
 
     const sizes : any = {
-        md : 'desktop:text-md text-sm rounded-md desktop:px-4 px-2'
+        md : 'desktop:text-lg text-sm rounded-md  boxshadow-lg desktop:px-12 px-4 py-2 shadow-xl font-semibold'
     }
 
     const themes : any = {
-        danger : 'bg-red-100'
+        default : 'bg-gradient-to-tr from-red-100 to-green-100 hover:from-red-200 hover:to-red-300'
     }
 
-    return <button {...props} className={classnames("text-white", sizes[size] , themes[theme], props.className)}/>
+    const types : any = {
+        default : `rounded-full`,
+        classic : `rounded-md`,
+    }
+
+    return <button {...props} className={classnames("text-white font-poppins transition duration-300 transition-all", sizes[size] , themes[theme], types[type], props.className)}/>
 }

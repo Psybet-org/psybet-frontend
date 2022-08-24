@@ -1,7 +1,7 @@
-import '../styles/globals.css'
-import GlobalStyle from '../styles/globals'
-import type { AppProps } from 'next/app'
 import EthereumProvider from '../src/services/ethereum/EthereumProvider'
+import GlobalStyle from '../src/styles/globals'
+import type { AppProps } from 'next/app'
+import '../src/styles/globals.css'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return <> 

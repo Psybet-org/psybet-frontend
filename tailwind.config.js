@@ -7,17 +7,29 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        darkgray:{
+          400:"#AF9696",
+          600:"#4F4F4F",
+          700:"#242020",
+        },
         gray: {
           100: "#F8F2F2",
           800: "#242526",
-          900: "#393232"
+          900: "#393232",
+          950: '#341A23',
         },
         red: {
-          100: "#C93B3B"
+          100: "#FF5F6D",
+          200: "#C93B3B",
+          300: "#FA2F6C"
+        },
+        green:{
+          100: "#BCB578"
         }
       },
       fontFamily: {
-        consolas: "Consolas",
+        orbitron: "Orbitron",
+        poppins:'Poppins'
       },
       maxWidth: {
         layout: "1200px",

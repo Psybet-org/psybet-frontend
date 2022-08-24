@@ -3,19 +3,26 @@ import strings from '../../constants/strings';
 import { HEADER_SOCIALS } from "../../constants/links";
 import Image from 'next/image';
 import Button from '../../components/utilities/button';
+import useScroll from "../../hooks/useScroll";
+import classNames from "classnames";
+import useIsMobile from "../../hooks/useIsMobile";
 
 const LayoutHeader = () => {
+    const { scrollY,setY } = useScroll();
+    const isMobile = useIsMobile();
+
+    const notscrolled = scrollY > 40;
+
     return (
-        <nav className="w-full bg-gray-900 desktop:py-8 fixed right-0 top-0 left-0">
+        <nav className={
+            classNames("w-full desktop:py-8 fixed block right-0 top-0 left-0 z-50 font-poppins transition-all duration-300", !notscrolled || !isMobile && "bg-gray-900 shadow-lg")}>
             <div className="layout layout--center flex justify-between">
-                <div className="flex items-center gap-x-12 text-white">
-                    <Link href={'https://www.psybet.io'}>
-                        <a>
-                            PSYbet
-                        </a>
-                    </Link>
+                <div className="flex items-center gap-x-12 text-white text-xl font-semibold">
+                    <a role='button' className='-mb-2' onClick={() => setY()}>
+                        <Image src='/main/logo-string.png' width={117} height={31} alt='logo'/>
+                    </a>
                     { strings.HOME_MENUS.map(menu => 
-                        <div key={menu.title}>
+                        <div key={menu.title} className={classNames('text-white hover:text-red-100 transition-all duration-150',!notscrolled && 'hover:text-gray-900')}>
                             <Link href={menu.href}>
                                 <a>
                                     {menu.title}
@@ -24,22 +31,8 @@ const LayoutHeader = () => {
                         </div>
                      )}
                 </div>
-                <div className="flex items-center gap-x-4">
-                    {
-                        HEADER_SOCIALS.map(({ title ,image , link}) => {
-                            return (
-                                <a 
-                                    key={title} 
-                                    className="border-red-100 h-12 w-12 p-2 w-12 border flex items-center justify-center rounded-md relative" 
-                                    target={'_blank'} 
-                                    href={link}
-                                >
-                                        <Image width={20} height={15} src={image} />
-                                </a>
-                            )
-                        })
-                    }
-                    <Button className='h-12'>
+                <div className="flex items-center gap-x-4">           
+                    <Button type='classic' className='h-12'>
                         {strings.LAUNCH_APP}
                     </Button>
                 </div>

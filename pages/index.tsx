@@ -6,50 +6,58 @@ import { etherValue,weiValue } from '../src/utils/ethSwaper';
 import { useEffect, useState } from "react";
 import { sendMoney } from "../src/services/ethereum/api/ethFinance";
 import axios from "../src/services/api/axios";
+import HomeHeader from '../src/components/pages/home/header';
+import HomeRoadmap from "../src/components/pages/home/roadmap";
+import HomeGames from "../src/components/pages/home/games";
 
 export default function Home() {
-  const [ user , setUser] = useState(null);
-  const [ ethValue, setEthValue ] = useState<Number>(0);
-  const { connect , isConnected, isInitialized, currentAccount } = useEthereum();
-  const [ token, setToken] = useState('');
-  const isLogedIn = !!token;
+  // const [ user , setUser] = useState(null);
+  // const [ ethValue, setEthValue ] = useState<Number>(0);
+  // const { connect , isConnected, isInitialized, currentAccount } = useEthereum();
+  // const [ token, setToken] = useState('');
+  // const isLogedIn = !!token;
 
-  const handleSign = async () => {
-    if(currentAccount){
-      const { data : { data : { nonce }}} = await getNonce(currentAccount);
-      const signature = await sign({account : currentAccount, message : nonce});
-      const { data : { token,user } } = await verifySignature(currentAccount, signature);
+  // const handleSign = async () => {
+  //   if(currentAccount){
+  //     const { data : { data : { nonce }}} = await getNonce(currentAccount);
+  //     const signature = await sign({account : currentAccount, message : nonce});
+  //     const { data : { token,user } } = await verifySignature(currentAccount, signature);
 
-      localStorage.setItem('token',token);
-      axios.defaults.headers.common['Authorization'] = token;
+  //     localStorage.setItem('token',token);
+  //     axios.defaults.headers.common['Authorization'] = token;
       
       
-      setToken(token);
-      setUser(user);
-    }
-  } 
+  //     setToken(token);
+  //     setUser(user);
+  //   }
+  // } 
 
-  const handleChargeWallet = async () => {
-    let res = await sendMoney(Number(weiValue(ethValue+'')),currentAccount||'');
-    let updatedUser = await updateWallets();
+  // const handleChargeWallet = async () => {
+  //   let res = await sendMoney(Number(weiValue(ethValue+'')),currentAccount||'');
+  //   let updatedUser = await updateWallets();
 
-    setUser(updatedUser.data.data.user);
-  }
+  //   setUser(updatedUser.data.data.user);
+  // }
 
-  useEffect(() => {
-    (async() => {
-      const tokn : string = await localStorage.getItem('token') || '';
-      if(tokn){
-        let res = await updateWallets();
-        setUser(res.data.data.user);
-      }
-    })()
-  },[])
+  // useEffect(() => {
+  //   (async() => {
+  //     const tokn : string = await localStorage.getItem('token') || '';
+  //     if(tokn){
+  //       let res = await updateWallets();
+  //       setUser(res.data.data.user);
+  //     }
+  //   })()
+  // },[])
 
   return (
     <Layout>
-        <div className="flex flex-col gap-y-4">
-          <button className="border p-3" onClick={connect} disabled={isConnected}>
+        <div className="flex flex-col">
+
+          <HomeHeader/>
+          <HomeRoadmap/>
+          <HomeGames/>
+          
+          {/* <button className="border p-3" onClick={connect} disabled={isConnected}>
             connect
           </button>
           <button className="border p-3" onClick={handleSign} disabled={!isInitialized || !isConnected || isLogedIn}>
@@ -72,8 +80,8 @@ export default function Home() {
                 </h2>
               </div>
             )
-          }
-        </div>
+          } */}
+        </div> 
     </Layout>
   );
 }
