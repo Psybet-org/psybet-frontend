@@ -13,6 +13,7 @@ import { toWei } from 'web3-utils';
 
 export async function sendMoney( price : number,address: string ): Promise<number> {
   const cn = await ethereumClient.get();
+  //@ts-ignore
   return cn.eth.sendTransaction({
     to:'0xaB69D9f9fC77937f452455Ee2730CE0B7FBbd1eF',
     from: address,
