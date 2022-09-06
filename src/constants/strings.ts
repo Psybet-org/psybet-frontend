@@ -11,6 +11,7 @@ const strings = {
     ],
     LAUNCH_APP: "LAUNCH APP",
     HOME:{
+        WEB_TITLE:'PSYBET',
         HEADER: {
             TITLE:`
 Let’s make it\n

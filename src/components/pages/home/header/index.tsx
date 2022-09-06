@@ -4,7 +4,8 @@ import Button from '../../../../components/utilities/button';
 import DiscordComponent from "../../../utilities/socials/discord";
 import useIsMobile from '../../../../hooks/useIsMobile';
 import { HOME } from '../../../../constants/strings';
-import { DISCORD_URL } from '../../../../constants/links';
+import { DISCORD_URL, APP_ROUTE } from '../../../../constants/links';
+import Link from 'next/link';
 
 const HomeHeader = () => {
 
@@ -23,9 +24,13 @@ const HomeHeader = () => {
                         <h2 className='font-poppins whitespace-pre desktop:text-xl desktop:leading-4 font-semibold'> {HOME.HEADER.DESCRIPTION} </h2>
                         <div className='flex items-center gap-x-2'>
                             <div className='flex'>
-                                <Button>
-                                    Play Game
-                                </Button>
+                                <Link href={APP_ROUTE}>
+                                    <a>
+                                        <Button>
+                                            Play Game
+                                        </Button>
+                                    </a>
+                                </Link>
                             </div>
                             <a href={DISCORD_URL}>
                                 <DiscordComponent/>

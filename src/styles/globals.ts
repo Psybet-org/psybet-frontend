@@ -9,8 +9,8 @@ const GlobalStyle = createGlobalStyle`
         ${tw`mx-auto`};
     }
 }
-   /* latin */
-   
+  
+/* latin */
 @font-face {
   font-family: 'Orbitron';
   font-style: normal;
@@ -310,7 +310,7 @@ const GlobalStyle = createGlobalStyle`
 }
 
 body  {
-        font-family: 'Orbitron', sans-serif;
+  font-family: 'Orbitron', sans-serif;
 }
 
 html {

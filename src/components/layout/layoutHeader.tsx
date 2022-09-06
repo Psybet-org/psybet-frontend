@@ -1,6 +1,6 @@
 import Link from "next/link";
 import strings from '../../constants/strings';
-import { HEADER_SOCIALS } from "../../constants/links";
+import { APP_ROUTE } from "../../constants/links";
 import Image from 'next/image';
 import Button from '../../components/utilities/button';
 import useScroll from "../../hooks/useScroll";
@@ -30,13 +30,16 @@ const LayoutHeader = () => {
                         </div>
                      )}
                 </div>
-                <div className="flex items-center gap-x-4">           
-                    <Button type='classic' className='h-12'>
-                        {strings.LAUNCH_APP}
-                    </Button>
+                <div className="flex items-center gap-x-4">  
+                    <Link href={APP_ROUTE}>
+                        <a>
+                            <Button type='classic' className='h-12'>
+                                {strings.LAUNCH_APP}
+                            </Button>
+                        </a>
+                    </Link>         
                 </div>
             </div>
-
         </nav>
     )
 }
