@@ -23,7 +23,7 @@ function HomeGames() {
               layout="responsive"
               objectFit="cover"
               alt={"games"}
-              src="/home/game-cover.png"
+              src="/home/game-cover.jpg"
               className="shadow-lg border-1"
               quality={100}
             />
