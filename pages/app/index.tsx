@@ -10,7 +10,7 @@ import { useEffect, useState } from "react";
 import { sendMoney } from "../../src/services/ethereum/api/ethFinance";
 import axios from "../../src/services/api/axios";
 
-const App = () => {
+function App() {
   const [user, setUser] = useState(null);
   const [ethValue, setEthValue] = useState<Number>(0);
   const { connect, isConnected, isInitialized, currentAccount } = useEthereum();
@@ -26,8 +26,9 @@ const App = () => {
       } = await getNonce(currentAccount);
       const signature = await sign({ account: currentAccount, message: nonce });
       const {
+        // eslint-disable-next-line @typescript-eslint/no-shadow
         data: { token, user },
-      } = await verifySignature(currentAccount, signature);
+      }: any = await verifySignature(currentAccount, signature);
 
       localStorage.setItem("token", token);
       axios.defaults.headers.common["Authorization"] = token;
@@ -38,10 +39,7 @@ const App = () => {
   };
 
   const handleChargeWallet = async () => {
-    let res = await sendMoney(
-      Number(weiValue(ethValue + "")),
-      currentAccount || ""
-    );
+    await sendMoney(Number(weiValue(ethValue + "")), currentAccount || "");
     let updatedUser = await updateWallets();
 
     setUser(updatedUser.data.data.user);
@@ -106,6 +104,6 @@ const App = () => {
       }
     </div>
   );
-};
+}
 
 export default App;

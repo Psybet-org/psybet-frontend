@@ -3,7 +3,7 @@ import { ROADMAP } from "../../../../constants/strings";
 import Image from "next/image";
 import useIsMobile from "../../../../hooks/useIsMobile";
 
-const HomeRoadmap = () => {
+function HomeRoadmap() {
   const isMobile = useIsMobile();
 
   return (
@@ -66,6 +66,6 @@ const HomeRoadmap = () => {
       </div>
     </Style>
   );
-};
+}
 
 export default HomeRoadmap;
