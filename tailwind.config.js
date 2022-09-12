@@ -7,30 +7,32 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        darkgray:{
-          400:"#AF9696",
-          600:"#4F4F4F",
-          700:"#242020",
+        darkgray: {
+          400: "#AF9696",
+          600: "#4F4F4F",
+          700: "#242020",
         },
         gray: {
           100: "#F8F2F2",
           800: "#242526",
           900: "#393232",
-          950: '#341A23',
+          950: "#341A23",
         },
         red: {
           100: "#FF5F6D",
           200: "#C93B3B",
           300: "#FA2F6C",
-          400: "#FE2472"
+          400: "#FE2472",
         },
-        green:{
-          100: "#BCB578"
-        }
+        green: {
+          100: "#BCB578",
+          200: "#124B2B",
+          300: "#0b2a18",
+        },
       },
       fontFamily: {
         orbitron: "Orbitron",
-        poppins:'Poppins'
+        poppins: "Poppins",
       },
       maxWidth: {
         layout: "1200px",

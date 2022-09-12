@@ -4,7 +4,10 @@ const withFonts = require("next-fonts");
 module.exports = withFonts({
   enableSvg: true,
   reactStrictMode: true,
-  webpack(config, options) {
+  images: {
+    unoptimized: true,
+  },
+  webpack(config) {
     return config;
   },
 });

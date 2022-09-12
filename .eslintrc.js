@@ -8,11 +8,7 @@ module.exports = {
     JSX: true,
     React: true,
   },
-  extends: [
-    "plugin:react/recommended",
-    "next",
-    "next/core-web-vitals",
-  ],
+  extends: ["plugin:react/recommended", "next", "next/core-web-vitals"],
   parser: "@typescript-eslint/parser",
   parserOptions: {
     ecmaFeatures: {
@@ -54,22 +50,22 @@ module.exports = {
       },
     ],
   },
-  settings: {
-    "import/resolver": {
-      alias: {
-        map: [
-          ["@styles", "./src/styles"],
-          ["@shared", "./src/shared"],
-          ["@strings", "./src/shared/constants/strings"],
-          ["@services", "./src/services"],
-          ["@@", "./src/components"],
-          ["@", "./src"],
-          ["@root", "./"],
-        ],
-        extensions: [".ts", ".tsx", ".scss", ".js"],
-      },
-    },
-  },
+  // settings: {
+  //   "import/resolver": {
+  //     alias: {
+  //       map: [
+  //         ["@styles", "./src/styles"],
+  //         ["@shared", "./src/shared"],
+  //         ["@strings", "./src/shared/constants/strings"],
+  //         ["@services", "./src/services"],
+  //         ["@@", "./src/components"],
+  //         ["@", "./src"],
+  //         ["@root", "./"],
+  //       ],
+  //       extensions: [".ts", ".tsx", ".scss", ".js"],
+  //     },
+  //   },
+  // },
   overrides: [
     {
       files: ["*.ts"],
