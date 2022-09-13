@@ -6,7 +6,7 @@ const Style = styled.div`
   }
 
   .svg:hover {
-    circle {
+    s circle {
       stroke: #393232 !important;
     }
     path {
@@ -15,9 +15,9 @@ const Style = styled.div`
   }
 
   .rotate {
-    -webkit-animation: spin 10s linear infinite;
-    -moz-animation: spin 10s linear infinite;
-    animation: spin 10s linear infinite;
+    -webkit-animation: spin 15s linear infinite;
+    -moz-animation: spin 15s linear infinite;
+    animation: spin 10 linear infinite;
   }
 
   .scale-animation {
