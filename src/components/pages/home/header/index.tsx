@@ -68,7 +68,7 @@ function HomeHeader() {
               height={!isMobile ? 700 : 700}
               src="/main/header-charachter.png"
               alt="logo"
-              unoptimized={true}
+              // unoptimized={true}
             />
           </div>
 
