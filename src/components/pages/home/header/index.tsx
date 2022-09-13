@@ -75,7 +75,6 @@ function HomeHeader() {
               height={!isMobile ? 700 : 700}
               src="/main/picture-charachter.png"
               alt="logo"
-              quality={100}
             />
           </div>
 
