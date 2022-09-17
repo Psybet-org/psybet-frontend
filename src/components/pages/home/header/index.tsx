@@ -19,7 +19,6 @@ function HomeHeader() {
             src="/main/pattern.png"
             alt="bg"
             objectFit="cover"
-            layout="fill"
           />
         </div>
         <div className="layout relative layout--center flex desktop:justify-between justify-center items-end desktop:pb-0 pb-72">
@@ -63,19 +62,19 @@ function HomeHeader() {
                 </div>
               </div>
             )}
-            {/* <Image
+            <Image
               width={!isMobile ? 953 : 953}
               height={!isMobile ? 700 : 700}
               src="/main/header-charachter.png"
               alt="logo"
               unoptimized={true}
-            /> */}
-            <Image
+            />
+            {/* <Image
               width={!isMobile ? 953 : 953}
               height={!isMobile ? 700 : 700}
               src="/main/picture-charachter.png"
               alt="logo"
-            />
+            /> */}
           </div>
 
           {!isMobile && (
