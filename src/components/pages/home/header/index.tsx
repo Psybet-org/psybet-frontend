@@ -62,19 +62,19 @@ function HomeHeader() {
                 </div>
               </div>
             )}
-            <Image
+            {/* <Image
               width={!isMobile ? 953 : 953}
               height={!isMobile ? 700 : 700}
               src="/main/header-charachter.png"
               alt="logo"
               unoptimized={true}
-            />
-            {/* <Image
+            /> */}
+            <Image
               width={!isMobile ? 953 : 953}
               height={!isMobile ? 700 : 700}
               src="/main/picture-charachter.png"
               alt="logo"
-            /> */}
+            />
           </div>
 
           {!isMobile && (

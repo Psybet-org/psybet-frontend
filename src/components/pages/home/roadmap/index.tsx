@@ -1,10 +1,10 @@
 import Style from "./style";
 import { ROADMAP } from "../../../../constants/strings";
-// import Image from "next/image";
-// import useIsMobile from "../../../../hooks/useIsMobile";
+import Image from "next/image";
+import useIsMobile from "../../../../hooks/useIsMobile";
 
 function HomeRoadmap() {
-  // const isMobile = useIsMobile();
+  const isMobile = useIsMobile();
 
   return (
     <Style>
@@ -14,7 +14,7 @@ function HomeRoadmap() {
             {ROADMAP.TITLE}
           </h2>
           <div className="desktop:mt-12 mt-12 flex desktop:flex-row flex-col desktop:gap-y-0 gap-y-6 desktop:justify-between">
-            {/* {ROADMAP.ITEMS.map((data, key) => {
+            {ROADMAP.ITEMS.map((data, key) => {
               const { DONE } = data;
               return (
                 <div
@@ -60,7 +60,7 @@ function HomeRoadmap() {
                   </div>
                 </div>
               );
-            })} */}
+            })}
           </div>
         </div>
       </div>
