@@ -42,7 +42,7 @@ function HomeRoadmap() {
                           width={144}
                           height={4}
                           alt="line"
-                          src="/home/roadmap-line.png"
+                          src="/home/roadmap-line.webp"
                         />
                       </div>
                     )}

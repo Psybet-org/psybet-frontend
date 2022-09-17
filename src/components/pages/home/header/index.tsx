@@ -11,14 +11,13 @@ function HomeHeader() {
   const isMobile = useIsMobile();
   return (
     <Style>
-      <div className="w-full bg-gray-200 h auto relative desktop:pt-44 pt-32 bg-green-200  overflow-hidden">
+      <div className="w-full bg-gray-200 h auto relative desktop:pt-44 pt-32 bg-green-200 overflow-hidden">
         <div className="absolute right-0 top-0 bottom-0 left-0">
           <Image
-            width={"100%"}
-            height={"100%"}
-            src="/main/pattern.png"
+            src="/main/pattern.webp"
             alt="bg"
             objectFit="cover"
+            layout="fill"
           />
         </div>
         <div className="layout relative layout--center flex desktop:justify-between justify-center items-end desktop:pb-0 pb-72">
@@ -27,7 +26,7 @@ function HomeHeader() {
               <Image
                 width={!isMobile ? 800 : 800}
                 height={!isMobile ? 814 : 814}
-                src="/main/header-back.png"
+                src="/main/header-back.webp"
                 alt="logo"
               />
             </div>
@@ -38,7 +37,7 @@ function HomeHeader() {
                     className="rotate-45"
                     width={25}
                     height={25}
-                    src="/main/shine.png"
+                    src="/main/shine.webp"
                     alt="logo"
                   />
                 </div>
@@ -46,7 +45,7 @@ function HomeHeader() {
                   <Image
                     width={30}
                     height={30}
-                    src="/main/shine.png"
+                    src="/main/shine.webp"
                     alt="logo"
                     className="rotate-45"
                   />
@@ -56,24 +55,18 @@ function HomeHeader() {
                     className="rotate-12"
                     width={25}
                     height={25}
-                    src="/main/shine.png"
+                    src="/main/shine.webp"
                     alt="logo"
                   />
                 </div>
               </div>
             )}
-            {/* <Image
-              width={!isMobile ? 953 : 953}
-              height={!isMobile ? 700 : 700}
-              src="/main/header-charachter.png"
-              alt="logo"
-              unoptimized={true}
-            /> */}
             <Image
               width={!isMobile ? 953 : 953}
               height={!isMobile ? 700 : 700}
-              src="/main/picture-charachter.png"
+              src="/main/header-charachter.webp"
               alt="logo"
+              unoptimized={true}
             />
           </div>
 

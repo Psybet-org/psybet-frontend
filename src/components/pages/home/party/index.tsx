@@ -28,7 +28,7 @@ function HomeParty() {
               </div>
               <div className="flex justify-center items-center gap-x-6">
                 <Image
-                  src="/socials/discord-big.png"
+                  src="/socials/discord-big.webp"
                   width={!isMobile ? 156 : 70}
                   height={!isMobile ? 156 : 70}
                   quality={100}
@@ -50,7 +50,7 @@ function HomeParty() {
               </p>
               {!isMobile && (
                 <Image
-                  src="/main/logo-string-pic.png"
+                  src="/main/logo-string-pic.webp"
                   width={150}
                   height={200}
                   alt="logo"
