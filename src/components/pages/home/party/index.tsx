@@ -31,7 +31,6 @@ function HomeParty() {
                   src="/socials/discord-big.webp"
                   width={!isMobile ? 156 : 70}
                   height={!isMobile ? 156 : 70}
-                  quality={100}
                   alt={"discord"}
                 />
                 <p className="font-semibold text-white desktop:text-5xl text-2xl">
