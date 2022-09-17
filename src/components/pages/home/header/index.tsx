@@ -61,13 +61,13 @@ function HomeHeader() {
                 </div>
               </div>
             )}
-            {/* <Image
+            <Image
               width={!isMobile ? 953 : 953}
               height={!isMobile ? 700 : 700}
               src="/main/header-charachter.webp"
               alt="logo"
               unoptimized={true}
-            /> */}
+            />
           </div>
 
           {!isMobile && (

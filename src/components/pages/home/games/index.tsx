@@ -25,7 +25,7 @@ function HomeGames() {
               alt={"games"}
               src="/home/game-cover.webp"
               className="shadow-lg border-1"
-              // quality={100}
+              quality={100}
             />
           </div>
         </div>
