@@ -12,12 +12,12 @@ function Button(props: any) {
   } = props;
 
   const sizes: any = {
-    md: "desktop:text-lg text-sm rounded-md  boxshadow-lg desktop:px-12 px-4 py-2 shadow-xl font-semibold",
+    md: "sm:text-sm md:text-lg text-xs rounded-md  boxshadow-lg md:px-12 sm:px-6 px-4 py-2 shadow-xl font-semibold",
   };
 
   const themes: any = {
     default:
-      "bg-gradient-to-tr from-red-100 to-green-100 hover:from-red-200 hover:to-red-300",
+      "bg-gradient-to-tr from-red-100 to-green-100 hover:from-red-200 hover:to-red-300 whitespace-nowrap",
   };
 
   const types: any = {
@@ -29,7 +29,7 @@ function Button(props: any) {
     <button
       {...props}
       className={classnames(
-        "text-white font-poppins transition duration-300 transition-all",
+        "text-white font-poppins duration-300 transition-all",
         sizes[size],
         themes[theme],
         types[type],

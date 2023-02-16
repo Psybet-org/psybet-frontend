@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
-import { ethAccounts, ethCain } from '../ethereum/api';
-import ethereumClient, { EthClientType } from './ethereumClient';
-import EthereumContext from './shared/EthereumContext';
-import { ETHEREUM_NETWORK_ID, METAMASK_DAPP } from '../config';
+import React, { useEffect, useState } from "react";
+import { ethAccounts, ethCain } from "../ethereum/api";
+import ethereumClient, { EthClientType } from "./ethereumClient";
+import EthereumContext from "./shared/EthereumContext";
+import { ETHEREUM_NETWORK_ID, METAMASK_DAPP } from "../config";
 
 interface IProps {
   children: React.ReactNode;
@@ -13,22 +13,24 @@ export default function EthereumProvider({ children }: IProps) {
   const [client, setClient] = useState<EthClientType | null>(null);
   const [clientDetected, setClientDetected] = useState(false);
   const [isConnected, setIsConnected] = useState(false);
-  const [currentNetwork, setCurrentNetwork] = useState<number|null>(null);
-  const [currentAccount, setCurrentAccount] = useState<string|null>(null);
+  const [currentNetwork, setCurrentNetwork] = useState<number | null>(null);
+  const [currentAccount, setCurrentAccount] = useState<string | null>(null);
   const [isMainNetwork, setIsMainNetwork] = useState(false);
-  const [zencatBalanceOf, setZencatBalanceOf] = useState(0);
+  // const [zencatBalanceOf, setZencatBalanceOf] = useState(0);
 
   async function connect() {
     if (!isInitialized) {
-      throw new Error('Ethereum Client Not Initialized!');
+      throw new Error("Ethereum Client Not Initialized!");
     }
     if (!client && window) {
       const url = window?.location?.href;
       let combinedDapp;
-      if (url) { combinedDapp = METAMASK_DAPP + url; } else {
+      if (url) {
+        combinedDapp = METAMASK_DAPP + url;
+      } else {
         combinedDapp = METAMASK_DAPP;
       }
-      window.open(combinedDapp, '_blank');
+      window.open(combinedDapp, "_blank");
     }
 
     const [account] = await ethAccounts.getAccounts();
@@ -37,7 +39,7 @@ export default function EthereumProvider({ children }: IProps) {
     setCurrentNetwork(chainId);
     setIsMainNetwork(String(chainId) === ETHEREUM_NETWORK_ID);
     setIsConnected(true);
-    return ({ account, chainId });
+    return { account, chainId };
   }
 
   async function disconnect() {
@@ -92,31 +94,36 @@ export default function EthereumProvider({ children }: IProps) {
   }, [isInitialized]);
 
   useEffect(() => {
-    ethereumClient.init().then((initializedClient) => {
-      setClient(initializedClient);
-      setClientDetected(true);
-    }).catch(() => {
-      setClient(null);
-      setClientDetected(false);
-    }).finally(() => {
-      setIsConnected(false);
-      setIsInitialized(true);
-    });
+    ethereumClient
+      .init()
+      .then((initializedClient) => {
+        setClient(initializedClient);
+        setClientDetected(true);
+      })
+      .catch(() => {
+        setClient(null);
+        setClientDetected(false);
+      })
+      .finally(() => {
+        setIsConnected(false);
+        setIsInitialized(true);
+      });
   }, []);
 
   return (
     // eslint-disable-next-line react/jsx-no-constructed-context-values
-    <EthereumContext.Provider value={{
-      isInitialized,
-      client,
-      isConnected,
-      connect,
-      disconnect,
-      currentAccount,
-      currentNetwork,
-      isMainNetwork,
-      clientDetected,
-    }}
+    <EthereumContext.Provider
+      value={{
+        isInitialized,
+        client,
+        isConnected,
+        connect,
+        disconnect,
+        currentAccount,
+        currentNetwork,
+        isMainNetwork,
+        clientDetected,
+      }}
     >
       {children}
     </EthereumContext.Provider>

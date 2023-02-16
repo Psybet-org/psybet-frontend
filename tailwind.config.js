@@ -37,9 +37,6 @@ module.exports = {
       maxWidth: {
         layout: "1200px",
       },
-      screens: {
-        desktop: `${DESKTOP_WIDTH}px`,
-      },
     },
   },
   plugins: [],

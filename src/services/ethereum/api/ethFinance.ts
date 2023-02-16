@@ -1,6 +1,6 @@
-import psyContract from '../contracts/psybet';
+// import psyContract from '../contracts/psybet';
 import ethereumClient from '../ethereumClient';
-import { toWei } from 'web3-utils';
+// import { toWei } from 'web3-utils';
 
 // export async function chargeWallet( price : number,address: string ): Promise<number> {
 //   const contract = await psyContract.get();

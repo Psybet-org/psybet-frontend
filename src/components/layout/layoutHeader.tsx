@@ -1,27 +1,27 @@
-import Link from "next/link";
-import strings from "../../constants/strings";
-import { APP_ROUTE } from "../../constants/links";
-import Image from "next/image";
-import Button from "../../components/utilities/button";
-import useScroll from "../../hooks/useScroll";
 import classNames from "classnames";
-import useIsMobile from "../../hooks/useIsMobile";
+import Image from "next/image";
+import Link from "next/link";
+import Button from "../../components/utilities/button";
+import { APP_ROUTE } from "../../constants/links";
+import strings from "../../constants/strings";
+import useScroll from "../../hooks/useScroll";
+import useIsMobile from "../../hooks/useTailwindScreens";
 
 function LayoutHeader() {
   const { scrollY, setY } = useScroll();
-  const isMobile = useIsMobile();
+  const { isMobile } = useIsMobile();
   const notscrolled = scrollY > 40;
 
   return (
     <nav
       className={classNames(
-        "w-full desktop:py-8 py-4 px-6 fixed block right-0 top-0 left-0 z-50 font-poppins transition-all duration-300",
+        "w-full sm:py-4 py-4 fixed block right-0 top-0 left-0 z-50 font-poppins transition-all duration-300 overflow-hidden",
         (notscrolled || isMobile) && "bg-gray-900 shadow-lg"
       )}
     >
       <div className="layout layout--center flex justify-between">
-        <div className="flex items-center desktop:gap-x-12 gap-x-6 text-white desktop:text-xl text-md font-semibold">
-          <a role="button" className="-mb-2" onClick={() => setY()}>
+        <div className="flex items-center text-white sm:text-xl text-md font-semibold">
+          <a className="mr-6" role="button" onClick={() => setY()}>
             <Image
               src="/main/logo-string.png"
               width={117}
@@ -34,23 +34,17 @@ function LayoutHeader() {
               <div
                 key={menu.title}
                 className={classNames(
-                  "text-white hover:text-red-100 transition-all duration-150",
+                  "text-white mt-2 mr-3 hover:text-red-100 md:text-lg sm:text-md text-sm transition-all duration-150",
                   !notscrolled && "hover:text-gray-900"
                 )}
               >
-                <Link href={menu.href}>
-                  <a>{menu.title}</a>
-                </Link>
+                <Link href={menu.href}>{menu.title}</Link>
               </div>
             ))}
         </div>
         <div className="flex items-center gap-x-4">
           <Link href={APP_ROUTE}>
-            <a>
-              <Button type="classic" className="h-12">
-                {strings.LAUNCH_APP}
-              </Button>
-            </a>
+            <Button type="classic">{strings.LAUNCH_APP}</Button>
           </Link>
         </div>
       </div>
