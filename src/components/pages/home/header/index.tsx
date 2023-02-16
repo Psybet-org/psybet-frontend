@@ -28,14 +28,14 @@ function HomeHeader() {
               height={814}
               src="/main/header-back.webp"
               alt="logo"
-              className="absolute -bottom-48 right-0 md:right-10 w-[70%] min-w-[450px] md:w-[50%] sm-[80%]  sm:min-w[500px] md:min-w-[700px] rotate"
+              className="absolute -bottom-48 right-0 md:right-10 lg:right-44 w-[70%] min-w-[450px] lg:w-[40%] md:w-[50%] sm-[80%]  sm:min-w[500px] md:min-w-[700px] rotate"
             />
             <Image
               width={950}
               height={700}
               src="/main/header-charachter.webp"
               alt="charachter"
-              className="absolute bottom-0 right-0 md:right-10 w-[70%] min-w-[450px] md:w-[50%] sm-[80%]  sm:min-w[500px] md:min-w-[700px]"
+              className="absolute bottom-0 right-0 md:right-10 lg:right-44 w-[70%] min-w-[450px] lg:w-[40%] md:w-[50%] sm-[80%]  sm:min-w[500px] md:min-w-[700px]"
             />
           </div>
 

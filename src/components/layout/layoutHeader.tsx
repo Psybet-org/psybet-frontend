@@ -23,7 +23,7 @@ function LayoutHeader() {
         <div className="flex items-center text-white sm:text-xl text-md font-semibold">
           <a className="mr-6" role="button" onClick={() => setY()}>
             <Image
-              src="/main/logo-string.png"
+              src="/main/logo-string.webp"
               width={117}
               height={31}
               alt="logo"
